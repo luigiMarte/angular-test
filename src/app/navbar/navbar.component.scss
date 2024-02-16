@@ -1,0 +1,52 @@
+// Variables
+$navbar-bg-color: #333;
+$navbar-text-color: #fff;
+$navbar-brand-font-size: 24px;
+$navbar-nav-gap: 10px;
+
+// Styles
+.navbar {
+  background-color: $navbar-bg-color;
+  padding: 10px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-brand {
+    font-size: $navbar-brand-font-size;
+    color: $navbar-text-color;
+  }
+
+  .navbar-menu {
+    .navbar-nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 0;
+
+      .nav-item {
+        list-style: none;
+        
+        .nav-link {
+          color: $navbar-text-color;
+          padding: 8px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: darken($navbar-bg-color, 20%);
+          }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: $navbar-nav-gap;
+
+        .nav-item {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
